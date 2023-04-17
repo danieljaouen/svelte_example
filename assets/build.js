@@ -26,7 +26,6 @@ let opts = {
 if (watch) {
   opts = {
     ...opts,
-    watch,
     sourcemap: 'inline',
   }
 }
@@ -39,14 +38,8 @@ if (deploy) {
 }
 
 //build the application
-const promise = esbuild.build(opts);
-
-if (watch) {
-  promise.then((_result) => {
-    process.stdin.on('close', () => {
-      process.exit(0);
-    })
-
-    process.stdin.resume();
-  });
-}
+const promise = esbuild.context(opts).then(context => {
+  if (watch) {
+    context.watch();
+  }
+});

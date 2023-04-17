@@ -41,7 +41,9 @@ window.liveSocket = liveSocket
 
 import Greeter from "./greeter.svelte";
 
-window.onload = async function () {
+window.onload = (event) => {
+  alert("Hello, world!");
+  console.log(event);
   const targetId = "Greeter";
   const target = document.getElementById(targetId);
 
