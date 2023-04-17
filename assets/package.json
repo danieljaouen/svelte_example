@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "phoenix": "file:../deps/phoenix",
+    "phoenix_html": "file:../deps/phoenix_html",
+    "phoenix_live_view": "file:../deps/phoenix_live_view",
+    "save": "^2.9.0",
+    "svelte": "^3.58.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.16.17",
+    "esbuild-svelte": "^0.7.3"
+  }
+}

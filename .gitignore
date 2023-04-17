@@ -35,3 +35,4 @@ svelte_example-*.tar
 npm-debug.log
 /assets/node_modules/
 
+dev-emacs-elixir-format.exs
