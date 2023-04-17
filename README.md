@@ -3,7 +3,8 @@
 ## Modifications For Svelte
 
 Modifications were made to `config/dev.exs` to use the `esbuild-svelte` build
-script (which is located in `assets/build.js`).
+script (which is located in `assets/build.js` and was taken from
+[here](https://medium.com/@alistairisrael/phoenix-1-7-with-svelte-12257d853ed1)).
 
 To start the project:
 
