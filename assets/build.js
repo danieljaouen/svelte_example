@@ -8,17 +8,16 @@ const deploy = args.includes("--deploy");
 const loader = {
 }
 
-const plugins = [sveltePlugin()]
+const plugins = [sveltePlugin(),]
 
 let opts = {
   entryPoints: ["./js/app.js"],
-  bundle: true,
-  target: "es2018",
-  outdir: "../priv/static/js",
-  logLevel: "info",
   mainFields: ["svelte", "browser", "module", "main"],
-  format: "esm",
-  splitting: true,
+  bundle: true,
+  minify: false,
+  target: "es2017",
+  outdir: "../priv/static/assets",
+  logLevel: "info",
   loader,
   plugins,
 }
@@ -26,7 +25,7 @@ let opts = {
 if (watch) {
   opts = {
     ...opts,
-    sourcemap: 'inline',
+    sourcemap: true,
   }
 }
 
@@ -38,7 +37,7 @@ if (deploy) {
 }
 
 //build the application
-const promise = esbuild.context(opts).then(context => {
+esbuild.context(opts).then(context => {
   if (watch) {
     context.watch();
   }
